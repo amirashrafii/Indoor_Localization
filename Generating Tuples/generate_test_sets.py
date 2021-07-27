@@ -11,14 +11,14 @@ x_width = 6
 y_width = 6
 
 # For Laser
-p1 = [23, 51]
-p2 = [20, 17]
-p3 = [8, 45]
-p4 = [12, 30]
+# p1 = [23, 51]
+# p2 = [20, 17]
+# p3 = [8, 45]
+# p4 = [12, 30]
 
 
 
-p_dict = {"linklab": [p1, p2, p3, p4], "Holo": [p1, p2, p3, p4]}
+# p_dict = {"linklab": [p1, p2, p3, p4], "Holo": [p1, p2, p3, p4]}
 
 
 def check_in_test_set(northing, easting, points, x_width, y_width):
@@ -74,7 +74,7 @@ def construct_query_and_database_sets(base_path, runs_folder, folders, pointclou
         df_locations = df_locations.rename(columns={'number': 'file'})
         for index, row in df_locations.iterrows():
             # entire business district is in the test set
-            if (output_name == "business"):
+            if (output_name == "Holo_testset"):
                 test[len(test.keys())] = {'query': row['file'], 'x': row['x'], 'y': row['y']}
             elif (check_in_test_set(row['x'], row['y'], p, x_width, y_width)):
                 test[len(test.keys())] = {'query': row['file'], 'x': row['x'], 'y': row['y']}
@@ -116,7 +116,7 @@ for index in index_list:
     folders.append(all_folders[index])
 
 print(folders)
-construct_query_and_database_sets(base_path, runs_folder, folders, "/bin_submaps_10m/", "Origin_Centroids.csv",
+construct_query_and_database_sets(base_path, runs_folder, folders, "/bin_submaps_6m/", "Origin_Centroids.csv",
                                    p_dict["linklab"], "linklab")
 
 # For Holo
@@ -128,5 +128,5 @@ for index in uni_index:
     folders.append(all_folders[index])
 
 print(folders)
-construct_query_and_database_sets(base_path, runs_folder, folders, "/bin_submaps_10m/", "Origin_Centroids.csv",
+construct_query_and_database_sets(base_path, runs_folder, folders, "/bin_submaps_6m/", "Origin_Centroids.csv",
                                   p_dict["Holo"], "Holo_testset")
