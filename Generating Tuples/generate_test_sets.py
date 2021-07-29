@@ -52,7 +52,7 @@ def construct_query_and_database_sets(base_path, runs_folder, folders, pointclou
         # df_locations=df_locations.rename(columns={'timestamp':'file'})
         for index, row in df_locations.iterrows():
             # entire business district is in the test set
-            if (output_name == "business"):
+            if (output_name == "Holo_testset"):
                 df_test = df_test.append(row, ignore_index=True)
             elif (check_in_test_set(row['x'], row['y'], p, x_width, y_width)):
                 df_test = df_test.append(row, ignore_index=True)
