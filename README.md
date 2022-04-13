@@ -1,6 +1,7 @@
 [Amir Ashrafi Thesis.pdf](https://github.com/amirashrafii/Indoor_Localization/files/8483536/Amir.Ashrafi.Thesis.pdf)
 # Indoor localization for an Augmented Reality-based assissting system
 
+[embed]https://github.com/amirashrafii/Indoor_Localization/files/8483536/Amir.Ashrafi.Thesis.pdf[/embed]
 
 We provide a guideline in which it’s described what actions we took to build our indoor localization model for the future reference step by step as following: 
 1. We collected our 3D point cloud model with FARO Focus laser scanner
